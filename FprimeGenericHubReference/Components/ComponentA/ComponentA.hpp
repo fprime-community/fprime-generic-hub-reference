@@ -65,7 +65,7 @@ class ComponentA final : public ComponentAComponentBase {
     //!
     //! TODO
     void HubMessageTest_cmdHandler(FwOpcodeType opCode,  //!< The opcode
-                         U32 cmdSeq, U32 msgNum      //!< The command sequence number
+                         U32 cmdSeq, U32 hubMsgType      //!< The command sequence number
     ) override;
 
                              //! Buffer for testing

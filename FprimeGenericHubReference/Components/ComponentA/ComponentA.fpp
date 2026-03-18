@@ -8,7 +8,7 @@ module FprimeGenericHubReference {
         # This should be overridden by the developers with a useful command/port
         @ TODO
         async command HubMessageTest(
-                               msgNum: U32
+                               hubMsgType: U32
                              ) 
             #opcode 0x5A00000
 
