@@ -38,6 +38,7 @@ module FprimeGenericHubReference {
       instance b_hubByteStreamAdapter
       instance b_bufferManager
       instance b_comp
+      instance c_comp
 
     # ----------------------------------------------------------------------
     # Pattern graph specifiers

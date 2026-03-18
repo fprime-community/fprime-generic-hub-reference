@@ -64,7 +64,7 @@ class ComponentA final : public ComponentAComponentBase {
     //! Handler implementation for command TODO
     //!
     //! TODO
-    void HubMessage_cmdHandler(FwOpcodeType opCode,  //!< The opcode
+    void HubMessageTest_cmdHandler(FwOpcodeType opCode,  //!< The opcode
                          U32 cmdSeq, U32 msgNum      //!< The command sequence number
     ) override;
 

@@ -88,7 +88,7 @@ void ComponentA ::send_event(U32 count) {
 
 }
 
-void ComponentA ::HubMessage_cmdHandler(FwOpcodeType opCode, U32 cmdSeq, U32 msgNum) {
+void ComponentA ::HubMessageTest_cmdHandler(FwOpcodeType opCode, U32 cmdSeq, U32 msgNum) {
 
     Svc::GenericHub::HubType hubType =  static_cast<Svc::GenericHub::HubType>(msgNum); 
    

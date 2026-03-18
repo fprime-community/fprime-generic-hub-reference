@@ -39,6 +39,7 @@ module DeploymentA {
       instance a_hubBufferManager
       #instance a_hubComDriverBufferManager
       instance a_comp
+      instance c_comp
 
     # ----------------------------------------------------------------------
     # Pattern graph specifiers

@@ -48,6 +48,11 @@ module FprimeGenericHubReference {
     stack size Default.STACK_SIZE \
     priority 97
 
+  instance c_comp: ComponentC base id 0x11017500 \
+    queue size Default.QUEUE_SIZE \
+    stack size Default.STACK_SIZE \
+    priority 97
+
   instance b_comp: ComponentB base id 0x10017500 
 
   # ----------------------------------------------------------------------
