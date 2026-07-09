@@ -9,8 +9,9 @@
 #include <signal.h>
 // Used for command line argument processing
 #include <getopt.h>
-// Used for printf functions
+// Used for command-line logging
 #include <cstdlib>
+#include <Fw/Logger/Logger.hpp>
 
 /**
  * \brief print command line help message
@@ -20,7 +21,7 @@
  * @param app: name of application
  */
 void print_usage(const char* app) {
-    (void)printf("Usage: ./%s [options]\n-a\thostname/IP address\n-p\tport_number\n", app);
+    Fw::Logger::log("Usage: ./%s [options]\n-a\thostname/IP address\n-p\tport_number\n", app);
 }
 
 /**
@@ -85,12 +86,12 @@ int main(int argc, char* argv[]) {
     // Setup program shutdown via Ctrl-C
     signal(SIGINT, signalHandler);
     signal(SIGTERM, signalHandler);
-    (void)printf("Hit Ctrl-C to quit\n");
+    Fw::Logger::log("Hit Ctrl-C to quit\n");
 
     // Setup, cycle, and teardown topology
     FprimeGenericHubReference::DeploymentB::setupTopology(inputs);
     FprimeGenericHubReference::DeploymentB::startRateGroups(Fw::TimeInterval(1, 0));  // Program loop cycling rate groups at 1Hz
     FprimeGenericHubReference::DeploymentB::teardownTopology(inputs);
-    (void)printf("Exiting...\n");
+    Fw::Logger::log("Exiting...\n");
     return 0;
 }

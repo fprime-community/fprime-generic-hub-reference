@@ -22,7 +22,7 @@ ComponentB ::~ComponentB() {}
           Fw::Buffer& fwBuffer //!< The buffer
       ) {
 
-        printf("Component B  received buffer of size %d on its bufIn port\n", static_cast<U32>(fwBuffer.getSize()) );
+        this->log_ACTIVITY_LO_BufInReceived(static_cast<U32>(fwBuffer.getSize()));
         this->bufOut_out(0, fwBuffer);
       }
 
@@ -45,7 +45,7 @@ ComponentB ::~ComponentB() {}
 
         serBuffer.deserializeTo(val);
 
-        printf("Component B received %u on its serIn port\n", val);
+        this->log_ACTIVITY_LO_SerInReceived(val);
         
         //Send data back to DeploymentA::ComponentA to verify
         this->send_serialData(val); 
@@ -60,7 +60,7 @@ ComponentB ::~ComponentB() {}
         Fw::LogBuffer& args //!< Buffer containing serialized log entry
       ) {
 
-        printf("Component B  received event of size %u on its eventIn port\n", static_cast<U32>(args.getSize()) );
+        this->log_ACTIVITY_LO_EventInReceived(static_cast<U32>(args.getSize()));
 
         this->eventOut_out(0, id, timeTag, severity, args);
   }
@@ -73,7 +73,7 @@ ComponentB ::~ComponentB() {}
         Fw::TlmBuffer& tlmBuf //!< Buffer containing serialized telemetry value
       ) {
 
-        printf("Component B received telemChan of size %d on its telemIn port\n", static_cast<U32>(tlmBuf.getSize()) );
+        this->log_ACTIVITY_LO_TelemInReceived(static_cast<U32>(tlmBuf.getSize()));
         this->telemOut_out(0, id, timeTag, tlmBuf);
 
   }
