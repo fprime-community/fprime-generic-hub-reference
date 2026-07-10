@@ -16,6 +16,7 @@
 
 // Used for 1Hz synthetic cycling
 #include <Os/Mutex.hpp>
+#include <cstdio>
 
 // Allows easy reference to objects in FPP/autocoder required namespaces
 using namespace FprimeGenericHubReference::DeploymentB;
@@ -102,7 +103,7 @@ void setupTopology(const TopologyState& state) {
     // Autocoded id setup. Function provided by autocoder.
     setBaseIds();
     // Autocoded connection wiring. Function provided by autocoder.
-    printf ("Calling connectComponents\n");
+    printf("Calling connectComponents\n");
     connectComponents();
     // Autocoded command registration. Function provided by autocoder.
     regCommands();

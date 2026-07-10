@@ -78,4 +78,6 @@ namespace PingEntries = ::PingEntries;
 
 }  // namespace Deployments
 }
+
+namespace FprimeGenericHubReference_DeploymentB = FprimeGenericHubReference::DeploymentB;
 #endif
