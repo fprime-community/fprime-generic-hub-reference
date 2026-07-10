@@ -6,6 +6,7 @@
 
 #include "FprimeGenericHubReference/Components/ComponentB/ComponentB.hpp"
 #include <Fw/Com/ComBuffer.hpp>
+#include <Fw/Logger/Logger.hpp>
 
 namespace FprimeGenericHubReference {
 
@@ -22,7 +23,8 @@ ComponentB ::~ComponentB() {}
           Fw::Buffer& fwBuffer //!< The buffer
       ) {
 
-        this->log_ACTIVITY_LO_BufInReceived(static_cast<U32>(fwBuffer.getSize()));
+        Fw::Logger::log("Component B received buffer of size %u on bufIn\n",
+                        static_cast<U32>(fwBuffer.getSize()));
         this->bufOut_out(0, fwBuffer);
       }
 
@@ -45,7 +47,7 @@ ComponentB ::~ComponentB() {}
 
         serBuffer.deserializeTo(val);
 
-        this->log_ACTIVITY_LO_SerInReceived(val);
+        Fw::Logger::log("Component B received %u on serIn\n", val);
         
         //Send data back to DeploymentA::ComponentA to verify
         this->send_serialData(val); 
@@ -60,7 +62,8 @@ ComponentB ::~ComponentB() {}
         Fw::LogBuffer& args //!< Buffer containing serialized log entry
       ) {
 
-        this->log_ACTIVITY_LO_EventInReceived(static_cast<U32>(args.getSize()));
+        Fw::Logger::log("Component B received event of size %u on eventIn\n",
+                        static_cast<U32>(args.getSize()));
 
         this->eventOut_out(0, id, timeTag, severity, args);
   }
@@ -73,7 +76,8 @@ ComponentB ::~ComponentB() {}
         Fw::TlmBuffer& tlmBuf //!< Buffer containing serialized telemetry value
       ) {
 
-        this->log_ACTIVITY_LO_TelemInReceived(static_cast<U32>(tlmBuf.getSize()));
+        Fw::Logger::log("Component B received telemetry of size %u on telemIn\n",
+                        static_cast<U32>(tlmBuf.getSize()));
         this->telemOut_out(0, id, timeTag, tlmBuf);
 
   }

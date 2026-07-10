@@ -8,7 +8,6 @@
 #include <FprimeGenericHubReference/Deployments/DeploymentB/Top/DeploymentBTopologyAc.hpp>
 // Necessary project-specified types
 #include <Fw/Types/MallocAllocator.hpp>
-#include <Fw/Logger/Logger.hpp>
 #include <Svc/ComQueue/ComQueue.hpp>
 #include <Svc/RateGroupDriver/RateGroupDriver.hpp>
 #include <Svc/ActiveRateGroup/ActiveRateGroup.hpp>
@@ -17,6 +16,7 @@
 
 // Used for 1Hz synthetic cycling
 #include <Os/Mutex.hpp>
+#include <cstdio>
 
 // Allows easy reference to objects in FPP/autocoder required namespaces
 using namespace FprimeGenericHubReference::DeploymentB;
@@ -103,7 +103,7 @@ void setupTopology(const TopologyState& state) {
     // Autocoded id setup. Function provided by autocoder.
     setBaseIds();
     // Autocoded connection wiring. Function provided by autocoder.
-    Fw::Logger::log("Calling connectComponents\n");
+    printf("Calling connectComponents\n");
     connectComponents();
     // Autocoded command registration. Function provided by autocoder.
     regCommands();
