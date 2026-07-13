@@ -19,8 +19,8 @@ register_fprime_library(
         "${CMAKE_CURRENT_LIST_DIR}/ComponentA.fpp"
     SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/ComponentA.cpp"
-#   DEPENDS
-#       MyPackage_MyOtherModule
+    DEPENDS
+        Svc_GenericHub
 )
 
 ### Unit Tests ###
