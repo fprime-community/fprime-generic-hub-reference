@@ -11,7 +11,7 @@ module FprimeGenericHubReference {
       rateGroup3
     }
 
-  topology DeploymentB {
+  deployment topology DeploymentB {
 
     # ----------------------------------------------------------------------
     # Subtopology imports
