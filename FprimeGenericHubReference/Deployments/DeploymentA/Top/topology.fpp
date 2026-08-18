@@ -11,7 +11,7 @@ module DeploymentA {
       rateGroup3
     }
 
-  topology DeploymentA {
+  deployment topology DeploymentA {
 
     # ----------------------------------------------------------------------
     # Subtopology imports
